@@ -1,0 +1,18 @@
+apply from: "${confdir}/gradle/micronaut-test-resources-consumer.gradle"
+apply from: "${confdir}/gradle/micronaut-application.gradle"
+
+dependencies {
+    implementation project(':sources:core')
+
+    compileOnly 'io.micronaut.data:micronaut-data-document-processor'
+
+    testImplementation 'io.micronaut.test:micronaut-test-spock'
+    testResourcesService project(':sources:test-resources')
+}
+
+application {
+    mainClass = 'com.example.userservice.Application'
+    applicationDefaultJvmArgs = [
+            '-XX:TieredStopAtLevel=1'
+    ]
+}

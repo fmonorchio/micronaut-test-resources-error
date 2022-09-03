@@ -1,0 +1,27 @@
+subprojects {
+    apply plugin: 'groovy'
+
+    apply from: "${confdir}/gradle/test-sets.gradle"
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(jdkVersion)
+            vendor = JvmVendorSpec.matching(jdkVendor)
+        }
+    }
+
+    dependencies {
+        implementation 'ch.qos.logback:logback-classic'
+        implementation 'io.micronaut:micronaut-inject-groovy'
+
+        runtimeOnly 'io.micronaut.groovy:micronaut-runtime-groovy'
+    }
+
+    tasks.withType(Test) {
+        useJUnitPlatform()
+    }
+
+    compileGroovy {
+        groovyOptions.configurationScript = file("${confdir}/groovy/compiler-config.groovy")
+    }
+}

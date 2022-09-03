@@ -1,0 +1,8 @@
+apply from: "${confdir}/gradle/micronaut-library.gradle"
+
+dependencies {
+    api 'io.micronaut.data:micronaut-data-mongodb'
+    api 'io.micronaut.kafka:micronaut-kafka'
+    api 'io.micronaut:micronaut-http-server'
+    api 'org.mongodb:mongodb-driver-sync'
+}

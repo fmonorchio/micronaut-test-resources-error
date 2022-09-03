@@ -1,0 +1,8 @@
+apply plugin: 'io.micronaut.minimal.library'
+
+micronaut {
+    processing {
+        incremental true
+        annotations 'com.example.*'
+    }
+}

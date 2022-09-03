@@ -1,1 +1,0 @@
-# micronaut-test-resources-error

@@ -1,0 +1,2 @@
+apply from: "${confdir}/gradle/micronaut-library.gradle"
+apply from: "${confdir}/gradle/micronaut-test-resources.gradle"

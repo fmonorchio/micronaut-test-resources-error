@@ -1,0 +1,12 @@
+apply plugin: 'io.micronaut.test-resources'
+
+micronaut {
+    testResources {
+        additionalModules.add(KAFKA)
+        additionalModules.add(MONGODB)
+    }
+}
+
+internalStartTestResourcesService {
+    useClassDataSharing = false
+}

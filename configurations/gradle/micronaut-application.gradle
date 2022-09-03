@@ -1,0 +1,10 @@
+apply plugin: 'io.micronaut.minimal.application'
+
+micronaut {
+    runtime 'netty'
+
+    processing {
+        incremental true
+        annotations 'com.example.*'
+    }
+}
